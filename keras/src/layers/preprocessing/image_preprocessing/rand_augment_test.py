@@ -147,6 +147,6 @@ class RandAugmentTest(testing.TestCase):
         results = set()
         for output in ds:
             for i in output.numpy():
-                results.add(layer.augmentations[i].name)
+                results.add(layer._AUGMENT_LAYERS[i])
         print(results)
         self.assertTrue(len(results) > 1)
